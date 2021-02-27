@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,14 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Material(
-        child: Container(
-          child: Center(
-            child: Text(
-              "Welcome to flutter"),
-          ),
-        ),
-      ),
+      home: HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

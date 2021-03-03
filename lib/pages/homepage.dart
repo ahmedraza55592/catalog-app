@@ -11,12 +11,19 @@ class HomePage extends StatelessWidget {
       ),
       body: Material(
         child: Container(
-          child: Center(
-            child: Text("Welcome $number to flutter"),
+          child: Column(
+            children: [
+              Text("Welcome $number to flutter"),
+              Center(
+                child: Text("This is second Coloumn"),
+              )
+            ],
           ),
         ),
       ),
-      drawer: Drawer(child: Center(child: Text("First")),),
+      drawer: Drawer(
+        child: Center(child: Text("First")),
+      ),
     );
   }
 }

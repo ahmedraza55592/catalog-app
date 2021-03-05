@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String username = "";
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -18,7 +25,7 @@ class LoginPage extends StatelessWidget {
             height: 15,
           ),
           Text(
-            "Welcome to Login Page",
+            "Welcome user $username",
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -32,6 +39,10 @@ class LoginPage extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                       hintText: "Enter your name", labelText: "User Name"),
+                  onChanged: (value) {
+                    username = value;
+                    setState(() {});
+                  },
                 ),
                 TextFormField(
                   obscureText: true,
@@ -48,12 +59,50 @@ class LoginPage extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            style: TextButton.styleFrom(minimumSize: Size(300, 45)),
+            style: TextButton.styleFrom(minimumSize: Size(150, 40)),
             onPressed: () {
               Navigator.pushNamed(context, MyRoutes.homePage);
               print("Print something else");
             },
-          )
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          InkWell(
+              onTap: () async {
+                setState(() {
+                  changeButton = true;
+                });
+                await Future.delayed(Duration(seconds: 1));
+                Navigator.pushNamed(context, MyRoutes.signUpPage);
+                setState(() {
+                  changeButton = false;
+                });
+              },
+              child: AnimatedContainer(
+                duration: Duration(seconds: 1),
+                height: 40,
+                width: changeButton ? 40 : 150,
+                alignment: Alignment.center,
+                // color: Colors.black,
+                child: changeButton
+                    ? Icon(
+                        Icons.done,
+                        color: Colors.white,
+                      )
+                    : Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 20,
+                        ),
+                      ),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(changeButton ? 40 : 7),
+                ),
+              )),
         ],
       ),
     ));

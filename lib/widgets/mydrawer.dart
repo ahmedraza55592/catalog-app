@@ -5,7 +5,6 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.purple,
         child: ListView(
           children: [
             DrawerHeader(
@@ -21,12 +20,12 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(
                 Icons.home,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Home",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 textScaleFactor: 1.2,
               ),
@@ -38,12 +37,12 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(
                 Icons.email,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Email",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 textScaleFactor: 1.2,
               ),
@@ -55,18 +54,18 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(
                 Icons.message,
-                color: Colors.white,
+                color: Colors.black,
               ),
               title: Text(
                 "Inbox",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 textScaleFactor: 1.2,
               ),
               subtitle: Text(
                 "This is Inbox Page",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.black),
               ),
             ),
           ],

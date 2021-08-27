@@ -11,11 +11,13 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      // color: Colors.white70,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: ListTile(
         onTap: () {
           print("${catalog.name} ${catalog.desc} ${catalog.id}");
         },
-        leading: Image.network(catalog.imageurl),
+        leading: Image.network(catalog.image),
         title: Text(catalog.name),
         subtitle: Text(catalog.desc),
         trailing: Text(

@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (context, index) {
               return ItemWidget(catalog: dummyListItem[index]);
             },
+            
 
             // itemCount: Item.items.length,
             // itemBuilder: (context, index) {
